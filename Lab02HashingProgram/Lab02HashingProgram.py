@@ -72,8 +72,29 @@ def validate_hash():
 
 
 def main():
-    print("\nThis program is designed to hash files, store files, store the file hashes, and present \nthem in a json file. This program also verifies hash values of files in the chosen directory.\n")
-    print("Select an option below to proceed.")
+    while True:
+        print("\nWelcome to the Hashing Program.")
+        print("\nThis program is designed to hash files, store files, store the file hashes, and present them in a json file. This program also verifies hash values of files in the chosen directory.\n")
+
+        print("1. Generate a new hash table.")
+        print("2. Verify hashes.")
+        print("3. Exit.")
+        
+        user_menu_choice = input("\nSelect an option above to proceed.\n")
+
+        if user_menu_choice == "1":
+            generate_table()
+        elif user_menu_choice == "2":
+            validate_hash()
+        elif user_menu_choice == "3":
+            print("Exiting program. Goodbye.")
+            break
+        else:
+            print("Invalid input. Please select a valid menu option.")
+
+
+
+    
 
 if __name__ == "__main__":
     main()
