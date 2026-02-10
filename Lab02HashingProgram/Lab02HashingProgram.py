@@ -25,3 +25,28 @@ def traverse_directory(dir_path):
                 hash_table[file_path] = file_hash
     return hash_table
 
+def generate_table():
+    dir = input("Enter the directory path of the file to hash: ")
+    if not os.path.isdir(dir):
+        print("Invalid input. The directory path you entered does not exist.")
+        return
+    
+    hash_table = traverse_directory(dir)
+
+    with open("hash_table.json", "w") as json_file:
+        json.dump(hash_table, json_file, indent=5)
+
+    print("Hash table generated. Check hash_table.json for results.")
+
+
+
+
+
+
+
+def main():
+    print("\nThis program is designed to hash files, store files, store the file hashes, and present \nthem in a json file. This program also verifies hash values of files in the chosen directory.\n")
+    print("Select an option below to proceed.")
+
+if __name__ == "__main__":
+    main()
